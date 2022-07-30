@@ -15,6 +15,9 @@
         <li class="nav-item">
           <a class="nav-link" aria-current="page" href="create.php">Create</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" aria-current="page" href="./api/alist.php">API</a>
+        </li>
       </ul>
     </div>
   </div>

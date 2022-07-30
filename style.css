@@ -8,3 +8,24 @@
     text-decoration: none;
     color: black;
 }
+
+.realestatex {
+    background-image: url(./pictures/realestate.jpg);
+    height: 700px;
+    width: 100%;
+    background-size: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.icons {
+
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 8px;
+    width: 50px;
+    height: 50px;
+    margin: 8px;
+  }
