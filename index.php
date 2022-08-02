@@ -1,8 +1,8 @@
 <?php
 if (array_key_exists('reduced', $_GET)) {
-    $endpoint = "/api/alist.php?reduced=yes";
+    $endpoint = "./api/alist.php?reduced=yes";
   } else {
-    $endpoint = "/api/alist.php";
+    $endpoint = "./api/api1.php";
   }
 ?>
 
@@ -12,6 +12,7 @@ if (array_key_exists('reduced', $_GET)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Free Real Estate</title>
     <?php require_once 'components/boot.php' ?>
 </head>
@@ -39,7 +40,7 @@ if (array_key_exists('reduced', $_GET)) {
                   <div class="col text-center">
                     <a href="details.php?id=${home.id}" class="estatecard">
                         <div class="card" style="width: 18rem; height: 450px">
-                        <img src="./pictures/${home.image}" class="card-img-height" alt="${home.advert_title}">
+                        <img src="pictures/${home.image}" class="card-img-height" alt="${home.advert_title}">
                             <div class="card-body">
                             <h5 class="card-title">${home.advert_title}</h5>
                             <p class="card-text">${home.city}</p>

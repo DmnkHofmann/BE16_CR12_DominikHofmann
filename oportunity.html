@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div id="realestate" class="row"></div>
+    <script>
+            const xml = new XMLHttpRequest();
+            xml.open("GET", 'api/alist.php');
+            xml.onload = function () {
+                 const realestates = JSON.parse(xml.responseText);  
+                 realestates.data.forEach(element => {
+                    if(element.pricereduction == "Yes") {
+                    console.log(element)
+                    document.getElementById("realestate").innerHTML += `
+                   <div class="col text-center">
+                         <div class="card" style="width: 18rem; height: 450px">
+                         <img src="pictures/${element.image}" class="card-img-height" alt="${element.advert_title}">
+                             <div class="card-body">
+                             <h5 class="card-title">${element.advert_title}</h5>
+                             <p class="card-text">${element.city}</p>
+                             <p class="card-text">${element.size}</p>
+                             <p class="card-text">${element.price}</p>
+                             </div>
+                         </div>
+                    </div>`;
+                }
+                 });
+                };
+                
+            xml.send();
+ </script>
+</body>
+</html>

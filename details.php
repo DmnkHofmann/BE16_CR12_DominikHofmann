@@ -13,6 +13,7 @@ $home = mysqli_fetch_array($res, MYSQLI_ASSOC);
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
     <?php require_once 'components/boot.php' ?>
     <!-- <style>
@@ -25,7 +26,7 @@ $home = mysqli_fetch_array($res, MYSQLI_ASSOC);
 <?php require_once 'components/navigation.php' ?>
         <div class="container d-flex align-items-center justify-content-center flex-column">
                         <div class="card" style="width: 45vw">
-                        <img src="./pictures/<?php echo $home["image"]?>" class="card-img-height" alt="<?php echo $home["advert_title"]?>">
+                        <img src="pictures/<?php echo $home["image"]?>" class="card-img-height" alt="<?php echo $home["advert_title"]?>">
                             <div class="card-body">
                                 <h5 class="card-title"><?php echo $home["advert_title"]?></h5>
                                 <p class="card-text">Size: <?php echo $home["size"]?></p>
@@ -38,7 +39,7 @@ $home = mysqli_fetch_array($res, MYSQLI_ASSOC);
                                 <form action='./actions/a_delete.php' method='post'>
                                     <input type='hidden' name='id' value="<?php echo $home["id"]?>"/>
                                     <button class='btn btn-danger' type='submit'>Delete</button>
-                                    <a href ="/update.php?id=<?php echo $home["id"]?>" class='btn btn-primary'>Update</a>
+                                    <a href ="update.php?id=<?php echo $home["id"]?>" class='btn btn-primary'>Update</a>
                                 </form>
                                   
                         </div>

@@ -1,16 +1,37 @@
+
 <?php
+
+header('Content-Type: application/json');
+header('Access-Control-Allow-Method: GET');
 require_once '../components/db_connect.php';
 
-if (array_key_exists('reduced', $_GET)) {
-    $sql = "SELECT * FROM realestate WHERE pricereduction='Yes'";
-  } else {
+function response($status, $message, $data = null)
+{
+    $response = new stdClass();
+    $response->status = $status;
+    $response->message = $message;
+    $response->data = $data;
+    // convert it to string, because API is json
+    echo json_encode($response);
+}
+
+if ($_SERVER['REQUEST_METHOD'] == "GET") {
     $sql = "SELECT * FROM realestate";
-  }
+    $result = mysqli_query($connect, $sql);
+    if ($result) {
+        $row = mysqli_fetch_all($result, MYSQLI_ASSOC);
+        response(200, "Data fetched succesfully", $row);
+    } else {
+        response(400, 'error');
+    }
+}
+mysqli_close($connect); ?>
 
-$result= mysqli_query($connect,$sql);
 
-$realestate=mysqli_fetch_all($result, MYSQLI_ASSOC);
 
-echo json_encode($realestate);
 
-?>
+
+
+
+
+

@@ -29,7 +29,7 @@ $realestate = mysqli_fetch_array($res, MYSQLI_ASSOC);
 
     <fieldset>
         <legend class='h2'>Add Real Estate</legend>
-        <form action="/actions/a_update.php" method="post" enctype="multipart/form-data">
+        <form action="actions/a_update.php" method="post" enctype="multipart/form-data">
             <table class='table'>
             <input type='hidden' name='id' value="<?php echo $realestate['id'];?>"/>
                 <tr>
@@ -74,7 +74,7 @@ $realestate = mysqli_fetch_array($res, MYSQLI_ASSOC);
                 </tr>
                 <tr>
                     <td><button class='btn btn-success' type="submit">Update</button></td>
-                    <td><a href="/index.php"><button class='btn btn-warning' type="button">Home</button></a></td>
+                    <td><a href="index.php"><button class='btn btn-warning' type="button">Home</button></a></td>
                 </tr>
             </table>
         </form>
